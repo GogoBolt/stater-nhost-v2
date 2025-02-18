@@ -3,6 +3,9 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
+import { useNuxtApp } from '#app';
+
 const { $paypal } = useNuxtApp();
 const paypalButtonContainer = ref<HTMLElement | null>(null);
 

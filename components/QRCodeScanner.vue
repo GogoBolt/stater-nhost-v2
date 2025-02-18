@@ -24,6 +24,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import { QrcodeStream } from 'vue-qrcode-reader';
 
 const emit = defineEmits<{

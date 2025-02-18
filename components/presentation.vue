@@ -83,6 +83,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
 const isVisible = ref(true);
 const timer = ref(15);
 let interval: NodeJS.Timeout;

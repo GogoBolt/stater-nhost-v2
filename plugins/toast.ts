@@ -1,15 +1,16 @@
-import Vue3Toastify from 'vue3-toastify';
+import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
+import { defineNuxtPlugin } from '#app';
 
-export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(Vue3Toastify, {
+export default defineNuxtPlugin((nuxtApp: any) => {
+  nuxtApp.vueApp.use(toast, {
     autoClose: 3000,
     position: 'top-right',
   });
 
   return {
     provide: {
-      toast: Vue3Toastify,
+      toast,
     },
   };
 });

@@ -103,14 +103,13 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useNuxtApp } from '#app';
+import { useNuxtApp, navigateTo } from '#app';
 import { signInEmailOTPPromise } from '@nhost/nhost-js';
 
 const email = ref('');
 const password = ref('');
 const { auth } = useNuxtApp();
 
-// Fonction de connexion
 const handleLogin = async () => {
   try {
     const { session, error } = await auth.signIn({
@@ -128,7 +127,6 @@ const handleLogin = async () => {
   }
 };
 
-// Fonction pour gérer la connexion par fournisseur
 const loginWithProvider = async (provider: string) => {
   try {
     const { session, error } = await auth.signIn({

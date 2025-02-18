@@ -65,7 +65,9 @@
 </template>
 
 <script setup lang="ts">
-import type { NhostAuthMethods } from '~/types/nhost'
+import { ref } from 'vue';
+import { useNuxtApp, navigateTo } from '#app';
+import type { NhostAuthMethods } from '~/types/nhost';
 
 const email = ref('');
 const password = ref('');
@@ -77,7 +79,6 @@ const handleRegister = async () => {
   if (await auth.register(email.value, password.value, role.value)) {
     navigateTo('/dashboard');
   } else {
-    // Gérer l'erreur d'inscription
     console.error('Échec de l\'inscription');
   }
 };
