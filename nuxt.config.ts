@@ -5,7 +5,7 @@ export default defineNuxtConfig({
        * Configuration de Nhost via des variables d'environnement.
        *
        * Ces variables proviennent :
-       * - de vos fichiers .env.local (développement)
+       * - de vos fichiers .env  (développement)
        * - de vos fichiers .env.production (production)
        *
        * Elles permettent de configurer l'accès aux différents services Nhost.
@@ -42,6 +42,7 @@ export default defineNuxtConfig({
           : 'postgres://postgres:postgres@localhost:5432/local')
     }
   },
+
   app: {
     head: {
       title: process.env.APP_TITLE ||
@@ -67,10 +68,13 @@ export default defineNuxtConfig({
       ]
     }
   },
+
   // Pour configurer le serveur en mode développement (Nuxt 3 utilise "devServer" au lieu de "server")
   devServer: {
     port: Number(process.env.PORT) || 3000,
     host: process.env.HOST || '0.0.0.0'
   },
-  plugins: ['~/plugins/nhost.js']
+
+  plugins: ['~/plugins/nhost.js'],
+  compatibilityDate: '2025-02-18'
 })

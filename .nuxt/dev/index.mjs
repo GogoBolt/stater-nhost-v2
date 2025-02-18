@@ -180,7 +180,7 @@ const _r5XNS2YAiS = (function(nitro) {
 
 const rootDir = "/home/thier/projet_config-nhost-simple";
 
-const appHead = {"meta":[{"charset":"utf-8"},{"name":"description","content":"Description de l'appli Nhost."},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"property":"og:title","content":"Nom de l'Appli Dev"},{"property":"og:description","content":"Description de l'appli Nhost."},{"property":"og:image","content":"/logo.png"},{"property":"og:url","content":"http://localhost:3000"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"}],"style":[],"script":[],"noscript":[],"title":"Nom de l'Appli Dev"};
+const appHead = {"meta":[{"charset":"utf-8"},{"name":"description","content":"Gestion des cantines scolaires 2025."},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"property":"og:title","content":"Gestion des cantines scolaires 2025"},{"property":"og:description","content":"Gestion des cantines scolaires 2025."},{"property":"og:image","content":"/logo.png"},{"property":"og:url","content":"http://localhost:3000"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/logo.png"}],"style":[],"script":[],"noscript":[],"title":"Gestion des cantines scolaires 2025"};
 
 const appRootTag = "div";
 
