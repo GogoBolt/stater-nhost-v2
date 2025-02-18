@@ -3,10 +3,12 @@
   "compilerOptions": {
     "strict": true,
     "skipLibCheck": true,
+    "baseUrl": ".",
     "types": ["@nuxt/types", "@types/node"],
     "paths": {
       "~/*": ["./*"],
       "@/*": ["./*"]
     }
-  }
+  },
+  "include": ["./**/*.ts", "./**/*.vue"]
 }

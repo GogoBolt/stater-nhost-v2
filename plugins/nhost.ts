@@ -1,5 +1,5 @@
 import { NhostClient } from '@nhost/nhost-js';
-import { defineNuxtPlugin } from '#app';
+import { defineNuxtPlugin } from 'nuxt/app';
 import type { NhostAuthMethods } from '~/types/nhost';
 
 export default defineNuxtPlugin((nuxtApp) => {

@@ -55,5 +55,9 @@
 </template>
 
 <script setup lang="ts">
+// Exemple dans un fichier Vue/TypeScript
+import { ref } from 'vue';             // Pour utiliser 'ref'
+import { useAuth } from '~/composables/auth';   // Pour utiliser 'useAuth' 
+
 const { user } = useAuth();
 </script>
