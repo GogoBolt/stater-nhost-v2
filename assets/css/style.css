@@ -1,30 +1,56 @@
-/* assets/css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles */
-.page-background {
-  @apply fixed inset-0 bg-gradient-to-br from-gray-50 to-gray-100 -z-10;
+:root {
+  --primary-color: #0070BA;
+  --primary-hover: #003087;
+  --secondary-color: #169BD7;
+  --success-color: #2C9B00;
+  --danger-color: #C72E2E;
+  --warning-color: #FFB700;
 }
 
-.content {
-  @apply relative z-10 min-h-screen pt-16;
+body {
+  font-family: 'PayPal Sans Big', 'Helvetica Neue', Arial, sans-serif;
+  @apply bg-gray-50 text-gray-900;
 }
 
-/* Primary colors */
-.text-primary {
-  @apply text-blue-600;
+/* Boutons */
+.btn {
+  @apply px-4 py-2 rounded font-medium transition-all duration-200;
 }
 
-.bg-primary {
-  @apply bg-blue-600;
+.btn-primary {
+  @apply bg-primary-500 text-white hover:bg-primary-600 shadow-paypal hover:shadow-paypal-hover;
 }
 
-.border-primary {
-  @apply border-blue-600;
+.btn-secondary {
+  @apply bg-secondary-500 text-white hover:bg-secondary-600 shadow-paypal hover:shadow-paypal-hover;
+}
+
+.btn-success {
+  @apply bg-success text-white hover:opacity-90 shadow-paypal hover:shadow-paypal-hover;
+}
+
+.btn-danger {
+  @apply bg-danger text-white hover:opacity-90 shadow-paypal hover:shadow-paypal-hover;
+}
+
+/* Formulaires */
+.form-input {
+  @apply w-full px-4 py-2 rounded border border-gray-300 focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-colors;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+/* Cards */
+.card {
+  @apply bg-white rounded shadow-paypal p-6 hover:shadow-paypal-hover transition-shadow;
 }
 
 /* Animations */
@@ -38,24 +64,66 @@
   opacity: 0;
 }
 
-/* Loading spinner */
-.loading-spinner {
-  @apply animate-spin h-5 w-5 text-white;
+/* Layout */
+.page-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
 }
 
-/* Form styles */
-.form-input {
-  @apply mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500;
+.section-title {
+  @apply text-2xl font-bold text-gray-900 mb-6;
 }
 
-.form-label {
-  @apply block text-sm font-medium text-gray-700;
+.section-subtitle {
+  @apply text-lg text-gray-600 mb-8;
 }
 
-.btn-primary {
-  @apply inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+/* Navigation */
+.nav-link {
+  @apply text-gray-600 hover:text-primary-500 transition-colors;
 }
 
-.btn-secondary {
-  @apply inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+.nav-link-active {
+  @apply text-primary-500 font-medium;
+}
+
+/* Tables */
+.table-container {
+  @apply overflow-x-auto bg-white rounded shadow-paypal;
+}
+
+.table {
+  @apply min-w-full divide-y divide-gray-200;
+}
+
+.table-header {
+  @apply bg-gray-50;
+}
+
+.table-cell {
+  @apply px-6 py-4 whitespace-nowrap text-sm text-gray-500;
+}
+
+.table-cell-header {
+  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+}
+
+/* Alerts */
+.alert {
+  @apply p-4 rounded mb-4 shadow-paypal;
+}
+
+.alert-success {
+  @apply bg-success/10 text-success border border-success/20;
+}
+
+.alert-error {
+  @apply bg-danger/10 text-danger border border-danger/20;
+}
+
+.alert-warning {
+  @apply bg-warning/10 text-warning border border-warning/20;
+}
+
+.alert-info {
+  @apply bg-primary-500/10 text-primary-500 border border-primary-500/20;
 }
