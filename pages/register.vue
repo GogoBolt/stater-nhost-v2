@@ -66,14 +66,15 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useNuxtApp, navigateTo } from '#app';
+import { useNuxtApp, navigateTo }from 'nuxt/app';
 import type { NhostAuthMethods } from '~/types/nhost';
 
 const email = ref('');
 const password = ref('');
 const role = ref('parent');
 
-const { auth } = useNuxtApp() as { auth: NhostAuthMethods };
+const { auth } = useNuxtApp() as unknown as { auth: NhostAuthMethods };
+
 
 const handleRegister = async () => {
   if (await auth.register(email.value, password.value, role.value)) {

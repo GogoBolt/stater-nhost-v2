@@ -103,12 +103,12 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useNuxtApp, navigateTo } from '#app';
+import { useNuxtApp, navigateTo }from 'nuxt/app';
 import { signInEmailOTPPromise } from '@nhost/nhost-js';
-
+import type { NhostAuthMethods } from '~/types/nhost';
+const { auth } = useNuxtApp() as unknown as { auth: NhostAuthMethods };
 const email = ref('');
-const password = ref('');
-const { auth } = useNuxtApp();
+const password = ref(''); 
 
 const handleLogin = async () => {
   try {

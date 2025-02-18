@@ -125,7 +125,7 @@
 import { ref } from 'vue';
 import { useAuth } from '~/composables/auth';
 import { toast } from 'vue3-toastify';
-import { navigateTo } from '#app';
+import { navigateTo }from 'nuxt/app';
 
 const { isAuthenticated, logout } = useAuth(); 
 const mobileMenuOpen = ref(false);

@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { useNuxtApp } from '#app';
+import { useNuxtApp }from 'nuxt/app';
 
 const { $paypal } = useNuxtApp();
 const paypalButtonContainer = ref<HTMLElement | null>(null);
@@ -20,6 +20,12 @@ const emit = defineEmits<{
 }>();
 
 onMounted(async () => {
+  interface PayPal {
+  Buttons: any;
+  // autres propriétés et méthodes
+}
+
+const { $paypal } = useNuxtApp() as unknown as { $paypal: PayPal };
   if (!paypalButtonContainer.value) return;
 
   try {

@@ -1,5 +1,5 @@
 import { loadScript } from "@paypal/paypal-js";
-import { defineNuxtPlugin } from '#app';
+import { defineNuxtPlugin }from 'nuxt/app';
 import type { PayPalScriptOptions } from '@paypal/paypal-js';
 
 export default defineNuxtPlugin(async (nuxtApp) => {

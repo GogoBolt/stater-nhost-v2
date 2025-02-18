@@ -1,19 +1,18 @@
 import { ref, computed } from 'vue';
-import { useNhostClient } from '@nhost/vue';
-import { useToast } from '~/composables/useToast';
+import { useNuxtApp } from 'nuxt/app';
+import { toast } from 'vue3-toastify'; 
 
 export const useAuth = () => {
-  const nhost = useNhostClient();
-  const toast = useToast();
-  
-  const user = computed(() => nhost.auth.getUser());
-  const isAuthenticated = computed(() => nhost.auth.isAuthenticated());
+ 
+  const $nhost = useNuxtApp().$nhost as any;
+  const user = computed(() => $nhost.auth.getUser());
+  const isAuthenticated = computed(() => $nhost.auth.isAuthenticated());
   const isLoading = ref(false);
 
   const login = async (email: string, password: string) => {
     isLoading.value = true;
     try {
-      const { error, session } = await nhost.auth.signIn({
+      const { error, session } = await $nhost.auth.signIn({
         email,
         password,
       });
@@ -36,7 +35,7 @@ export const useAuth = () => {
   const register = async (email: string, password: string, role: string = 'user') => {
     isLoading.value = true;
     try {
-      const { error, session } = await nhost.auth.signUp({
+      const { error, session } = await $nhost.auth.signUp({
         email,
         password,
         options: {
@@ -63,7 +62,7 @@ export const useAuth = () => {
   const logout = async () => {
     isLoading.value = true;
     try {
-      const { error } = await nhost.auth.signOut();
+      const { error } = await $nhost.auth.signOut();
       if (error) {
         toast.error(error.message);
         return false;
@@ -80,7 +79,7 @@ export const useAuth = () => {
   const updateProfile = async (data: any) => {
     isLoading.value = true;
     try {
-      const { error } = await nhost.auth.updateUser(data);
+      const { error } = await $nhost.auth.updateUser(data);
       if (error) {
         toast.error(error.message);
         return false;

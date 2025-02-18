@@ -14,6 +14,6 @@
 <script setup lang="ts">
 import Header from '~/components/Header.vue';
 import Footer from '~/components/Footer.vue';
-import { toast, ToastContainer } from 'vue3-toastify';
+import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
 </script>

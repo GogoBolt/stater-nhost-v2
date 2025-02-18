@@ -62,13 +62,17 @@
 </template>
 
 <script setup lang="ts">
-const { userProfile, updateProfile } = useAuth();
-
+const { user, updateProfile } = useAuth();
+const userProfile = ref({
+  avatar: '',
+  name: '',
+  email: '',
+});
 const profileForm = ref({
-  displayName: userProfile.value.name,
-  phoneNumber: userProfile.value.phone,
-  city: userProfile.value.metadata?.location?.city || '',
-  district: userProfile.value.metadata?.location?.district || ''
+  displayName: user.value.name,
+  phoneNumber: user.value.phone,
+  city: user.value.metadata?.location?.city || '',
+  district: user.value.metadata?.location?.district || ''
 });
 
 const updateUserProfile = async () => {

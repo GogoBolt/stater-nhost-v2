@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss'],
+
   runtimeConfig: {
     public: {
       nhostSubdomain: process.env.NUXT_PUBLIC_NHOST_SUBDOMAIN || 'local',
@@ -16,6 +17,7 @@ export default defineNuxtConfig({
       nhostPostgresUrl: process.env.NUXT_PUBLIC_NHOST_POSTGRES_URL || 'postgres://postgres:postgres@localhost:5432/local'
     }
   },
+
   app: {
     head: {
       title: 'Gestion des cantines scolaires',
@@ -29,14 +31,19 @@ export default defineNuxtConfig({
       ]
     }
   },
+
   typescript: {
     strict: true,
     typeCheck: true
   },
+
   build: {
     transpile: ['@headlessui/vue']
   },
+
   nitro: {
     preset: 'node'
-  }
+  },
+
+  compatibilityDate: '2025-02-18'
 })
