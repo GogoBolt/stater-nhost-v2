@@ -1,2 +1,7 @@
 .nhost
 .secrets
+node_modules
+package-lock.json
+.output
+.nuxt
+.vscode
