@@ -7,6 +7,16 @@
     "paths": {
       "~/*": ["./*"],
       "@/*": ["./*"]
-    }
-  }
+    },
+    "typeRoots": ["./node_modules/@types", "./types"]
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.d.ts",
+    "./**/*.tsx",
+    "./**/*.vue"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
