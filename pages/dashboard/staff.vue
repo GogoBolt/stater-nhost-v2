@@ -28,6 +28,7 @@
 
 <script setup lang="ts">
 import dayjs from 'dayjs';
+import {ref} from 'vue';
 
 interface ScanResult {
   studentId: string;

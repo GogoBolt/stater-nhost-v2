@@ -3,12 +3,14 @@
   "compilerOptions": {
     "strict": true,
     "skipLibCheck": true,
-    "types": ["@nuxt/types", "@types/node"],
+    "types": ["node"],
     "paths": {
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "typeRoots": ["./node_modules/@types", "./types"]
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
   "include": [
     "./**/*.ts",

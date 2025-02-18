@@ -62,6 +62,11 @@
 </template>
 
 <script setup lang="ts">
+
+
+
+import { ref } from 'vue';
+import { useAuth } from '~/composables/auth'; 
 const { user, updateProfile } = useAuth();
 const userProfile = ref({
   avatar: '',

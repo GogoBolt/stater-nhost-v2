@@ -5,7 +5,7 @@
         <!-- Logo -->
         <div class="flex items-center">
           <NuxtLink to="/" class="flex items-center space-x-2">
-            <img src="/logo.png" alt="Logo" class="h-8 w-8 object-contain" />
+            <img src="/logo.png" alt="Logo" class="h-10 w-10 mr-3 rounded-lg object-cover" />
             <div>
               <span class="text-xl font-bold text-primary-600">GogoSoft</span>
               <span class="text-sm text-gray-500 block">Cantine Scolaire</span>
