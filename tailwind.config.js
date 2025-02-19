@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        heading: ['Poppins', 'sans-serif'],
+      },
       colors: {
         primary: {
           50: '#EAF7FF',
@@ -16,8 +20,8 @@ export default {
           200: '#AAE0FF',
           300: '#80D0FF',
           400: '#55C1FF',
-          500: '#0070BA', // PayPal primary blue
-          600: '#003087', // PayPal dark blue
+          500: '#0070BA',
+          600: '#003087',
           700: '#002C6E',
           800: '#002356',
           900: '#001A3D',
@@ -28,26 +32,34 @@ export default {
           200: '#CBD4E1',
           300: '#A8B9CC',
           400: '#8EA3B9',
-          500: '#169BD7', // PayPal secondary blue
+          500: '#169BD7',
           600: '#142C8E',
           700: '#0E1F66',
           800: '#091340',
           900: '#040919',
         },
-        success: '#2C9B00', // PayPal green
-        warning: '#FFB700', // PayPal yellow
-        danger: '#C72E2E',  // PayPal red
+        success: '#2C9B00',
+        warning: '#FFB700',
+        danger: '#C72E2E',
       },
-      fontFamily: {
-        sans: ['PayPal Sans Big', 'Helvetica Neue', 'Arial', 'sans-serif'],
+      animation: {
+        'fade-in': 'fadeIn 0.3s ease-in-out',
+        'slide-up': 'slideUp 0.3s ease-out',
+        'slide-down': 'slideDown 0.3s ease-out',
       },
-      borderRadius: {
-        DEFAULT: '4px',
-        'lg': '8px',
-      },
-      boxShadow: {
-        'paypal': '0 2px 4px rgba(0, 0, 0, 0.1)',
-        'paypal-hover': '0 4px 8px rgba(0, 0, 0, 0.2)',
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        slideDown: {
+          '0%': { transform: 'translateY(-10px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
       },
     },
   },

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -14,54 +14,54 @@
 }
 
 body {
-  font-family: 'PayPal Sans Big', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   @apply bg-gray-50 text-gray-900;
 }
 
-/* Boutons */
-.btn {
-  @apply px-4 py-2 rounded font-medium transition-all duration-200;
-}
-
-.btn-primary {
-  @apply bg-primary-500 text-white hover:bg-primary-600 shadow-paypal hover:shadow-paypal-hover;
-}
-
-.btn-secondary {
-  @apply bg-secondary-500 text-white hover:bg-secondary-600 shadow-paypal hover:shadow-paypal-hover;
-}
-
-.btn-success {
-  @apply bg-success text-white hover:opacity-90 shadow-paypal hover:shadow-paypal-hover;
-}
-
-.btn-danger {
-  @apply bg-danger text-white hover:opacity-90 shadow-paypal hover:shadow-paypal-hover;
-}
-
-/* Formulaires */
-.form-input {
-  @apply w-full px-4 py-2 rounded border border-gray-300 focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-colors;
-}
-
-.form-label {
-  @apply block text-sm font-medium text-gray-700 mb-2;
-}
-
-/* Cards */
-.card {
-  @apply bg-white rounded shadow-paypal p-6 hover:shadow-paypal-hover transition-shadow;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Animations */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease;
+  @apply transition-opacity duration-300;
 }
 
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 0;
+  @apply opacity-0;
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  @apply transition-all duration-300 ease-out;
+}
+
+.slide-up-enter-from,
+.slide-up-leave-to {
+  @apply opacity-0 transform translate-y-4;
+}
+
+/* Components */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+  @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+}
+
+.btn-secondary {
+  @apply bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-500;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl p-6;
+}
+
+.input {
+  @apply w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-colors;
 }
 
 /* Layout */
@@ -69,61 +69,36 @@ body {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
 }
 
-.section-title {
-  @apply text-2xl font-bold text-gray-900 mb-6;
-}
-
-.section-subtitle {
-  @apply text-lg text-gray-600 mb-8;
+.section {
+  @apply py-12;
 }
 
 /* Navigation */
 .nav-link {
-  @apply text-gray-600 hover:text-primary-500 transition-colors;
+  @apply text-gray-600 hover:text-primary-600 transition-colors;
 }
 
 .nav-link-active {
-  @apply text-primary-500 font-medium;
+  @apply text-primary-600 font-medium;
 }
 
-/* Tables */
-.table-container {
-  @apply overflow-x-auto bg-white rounded shadow-paypal;
+/* Toast Notifications */
+.toast-container {
+  @apply fixed bottom-4 right-4 z-50;
 }
 
-.table {
-  @apply min-w-full divide-y divide-gray-200;
+.toast {
+  @apply mb-2 p-4 rounded-lg shadow-lg transform transition-all duration-300;
 }
 
-.table-header {
-  @apply bg-gray-50;
+.toast-success {
+  @apply bg-success text-white;
 }
 
-.table-cell {
-  @apply px-6 py-4 whitespace-nowrap text-sm text-gray-500;
+.toast-error {
+  @apply bg-danger text-white;
 }
 
-.table-cell-header {
-  @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
-}
-
-/* Alerts */
-.alert {
-  @apply p-4 rounded mb-4 shadow-paypal;
-}
-
-.alert-success {
-  @apply bg-success/10 text-success border border-success/20;
-}
-
-.alert-error {
-  @apply bg-danger/10 text-danger border border-danger/20;
-}
-
-.alert-warning {
-  @apply bg-warning/10 text-warning border border-warning/20;
-}
-
-.alert-info {
-  @apply bg-primary-500/10 text-primary-500 border border-primary-500/20;
+.toast-info {
+  @apply bg-primary-600 text-white;
 }
